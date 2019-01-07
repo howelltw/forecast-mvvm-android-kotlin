@@ -1,6 +1,7 @@
 package com.resocoder.forecastmvvm.data.db
 
 import androidx.lifecycle.LiveData
+import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
@@ -10,6 +11,7 @@ import com.resocoder.forecastmvvm.data.db.unitlocalized.future.MetricSimpleFutur
 import org.threeten.bp.LocalDate
 
 
+@Dao
 interface FutureWeatherDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insert(futureWeatherEntries: List<FutureWeatherEntry>)
